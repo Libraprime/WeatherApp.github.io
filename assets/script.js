@@ -34,25 +34,23 @@ const getWeatherData = async (cityValue) => {
         const details = [
             `Feels like: ${Math.round(data.main.feels_like)}`,
             `Humidity: ${data.main.humidity}%`,
-            `Wind speed: ${data.main.speed} m/s`,
+            `Wind speed: ${data.wind.speed} m/s`,
         ]
         
         weatherDataEl.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather icon" width="100px" height="100px">`;
         
         weatherDataEl.querySelector(".temperature").textContent = `${temperature}°C`;
         
-        weatherDataEl.querySelector(".description").textContent = ;
+        weatherDataEl.querySelector(".description").textContent = description;
         
         weatherDataEl.querySelector(".details").innerHTML = details.map((detail) => `<div>${detail}</div>`).join("");
-         } catch (error) {
-        // weatherDataEl.querySelector(
-        // ".icon"
-        // ).innerHTML = "";
+        } catch (error) {
+        weatherDataEl.querySelector(".icon").innerHTML = "";
         
-        // weatherDataEl.querySelector(".temperature").textContent = "";
+        weatherDataEl.querySelector(".temperature").textContent = "";
         
-        // weatherDataEl.querySelector(".description").textContent = "An error occured, Confirm if the location exists and try again later.";
+        weatherDataEl.querySelector(".description").textContent = "An error occured, Confirm if the location exists and try again later.";
         
-        // weatherDataEl.querySelector(".details").innerHTML = "";
+        weatherDataEl.querySelector(".details").innerHTML = "";
     }
 }
