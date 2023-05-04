@@ -23,7 +23,7 @@ const getWeatherData = async (cityValue) => {
         
         const data = await response.json();
 
-        // console.log(data);
+        console.log(data);
         
         const temperature = Math.round(data.main.temp);
         
@@ -32,7 +32,7 @@ const getWeatherData = async (cityValue) => {
         const icon = data.weather[0].icon;
         
         const details = [
-            `Feels like: ${Math.round(data.main.feels_like)}`,
+            `Feels like: ${Math.round(data.main.feels_like)}°C`,
             `Humidity: ${data.main.humidity}%`,
             `Wind speed: ${data.wind.speed} m/s`,
         ]
