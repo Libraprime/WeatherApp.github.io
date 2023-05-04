@@ -23,7 +23,7 @@ const getWeatherData = async (cityValue) => {
         
         const data = await response.json();
 
-        console.log(data);
+        // console.log(data);
         
         const temperature = Math.round(data.main.temp);
         
